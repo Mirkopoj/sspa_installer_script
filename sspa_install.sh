@@ -4,7 +4,10 @@ if ! command -v git &> /dev/null
 then
 	apt update && apt-get install git
 fi
-git clone https://github.com/Mirkopoj/sspa.git /opt/sspa
+if [-d "/opt/sspa"];
+then
+	git clone https://github.com/Mirkopoj/sspa.git /opt/sspa
+fi
 
 if ! command -v rustup &> /dev/null
 then
