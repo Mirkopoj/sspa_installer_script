@@ -29,7 +29,7 @@ sudo usermod -aG sspa $(logname)
 sudo -iu $(logname) -- cargo build --release --manifest-path /opt/sspa/Cargo.toml 
 sudo cp /opt/sspa/target/release/sspa /bin/sspa
 
-sudo wget https://raw.githubusercontent.com/Mirkopoj/sspa_installer_script/master/sspa_uninstall.sh -o /bin/sspa_uninstall.sh
+sudo wget https://raw.githubusercontent.com/Mirkopoj/sspa_installer_script/master/sspa_uninstall.sh -O /bin/sspa_uninstall.sh
 sudo chmod +x /bin/sspa_uninstall.sh
 
 echo Run sspa_uninstall.sh to uninstall
