@@ -8,9 +8,7 @@ fi
 if ! command -v rustup &> /dev/null
 then
 	curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-	export PATH
-	echo Rerun sspa_install.sh
-	exit
+	(sudo -iu $(logname) -- export PATH) >> /dev/null
 fi
 
 if [[ -d /opt/sspa ]];
@@ -26,10 +24,11 @@ sudo chgrp sspa /opt/sspa/ -R
 sudo chmod g+wrx /opt/sspa/ -R
 sudo usermod -aG sspa $(logname)
 
-sudo -iu $(logname) -- cargo build --release --manifest-path /opt/sspa/Cargo.toml 
+(sudo -iu $(logname) -- cargo build --release --manifest-path /opt/sspa/Cargo.toml ) >> /dev/null
 sudo cp /opt/sspa/target/release/sspa /bin/sspa
 
 sudo wget https://raw.githubusercontent.com/Mirkopoj/sspa_installer_script/master/sspa_uninstall.sh -O /bin/sspa_uninstall.sh
 sudo chmod +x /bin/sspa_uninstall.sh
 
+echo \nInstalation finished
 echo Run sspa_uninstall.sh to uninstall
