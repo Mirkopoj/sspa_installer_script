@@ -2,19 +2,24 @@
 
 if ! command -v git &> /dev/null
 then
-	apt update && apt-get install git
+	sudo apt update && sudo apt-get install git
 fi
-if [-d "/opt/sspa"];
-then
-	rm /opt/sspa -r
-fi
-git clone https://github.com/Mirkopoj/sspa.git /opt/sspa
 
 if ! command -v rustup &> /dev/null
 then
-	runuser -u $(logname) -- curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+	curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+	export PATH
+	echo Rerun sspa_install.sh
+	exit
 fi
 
-runuser -l $(logname) -c 'rustup update'
-wget https://raw.githubusercontent.com/Mirkopoj/sspa_installer_script/master/sspa_uninstall.sh -o /bin/sspa_uninstall.sh
-chmod +x /bin/sspa_uninstall.sh
+if [[ -d /opt/sspa ]];
+then
+	sudo rm /opt/sspa -r
+fi
+sudo git clone https://github.com/Mirkopoj/sspa.git /opt/sspa
+
+rustup update
+sudo wget https://raw.githubusercontent.com/Mirkopoj/sspa_installer_script/master/sspa_uninstall.sh -o /bin/sspa_uninstall.sh
+sudo chmod +x /bin/sspa_uninstall.sh
+echo Run sspa_uninstall.sh to uninstall
