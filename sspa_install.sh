@@ -6,8 +6,9 @@ then
 fi
 if [-d "/opt/sspa"];
 then
-	git clone https://github.com/Mirkopoj/sspa.git /opt/sspa
+	rm /opt/sspa -r
 fi
+git clone https://github.com/Mirkopoj/sspa.git /opt/sspa
 
 if ! command -v rustup &> /dev/null
 then
