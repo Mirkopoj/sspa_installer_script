@@ -30,6 +30,7 @@ sudo cp /opt/sspa/target/release/sspa /bin/sspa
 sudo wget https://raw.githubusercontent.com/Mirkopoj/sspa_installer_script/master/sspa_uninstall.sh -O /bin/sspa_uninstall.sh
 sudo chmod +x /bin/sspa_uninstall.sh
 
-echo \nInstalation finished
+echo 
+echo Instalation finished
 echo Run sspa_uninstall.sh to uninstall
 echo Run sspa --help for help on how to use the program
