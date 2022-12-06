@@ -32,3 +32,4 @@ sudo chmod +x /bin/sspa_uninstall.sh
 
 echo \nInstalation finished
 echo Run sspa_uninstall.sh to uninstall
+echo Run sspa --help for help on how to use the program
