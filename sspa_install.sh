@@ -25,7 +25,7 @@ rustup update
 sudo groupadd sspa
 sudo chgrp sspa /opt/sspa/ -R
 sudo chmod g+wrx /opt/sspa/ -R
-sudo usermod -aG sspa $(logname)
+sudo usermod -aG sspa spi gpio $(logname)
 
 (sudo -iu $(logname) -- cargo build --release --manifest-path /opt/sspa/Cargo.toml ) >> /dev/null
 sudo cp /opt/sspa/target/release/sspa /bin/sspa
