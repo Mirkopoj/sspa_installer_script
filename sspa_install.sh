@@ -14,7 +14,7 @@ then
 	(sudo -iu $(whoami) -- export PATH) >> /dev/null
 fi
 
-if [[ -d /opt/sspa ]];
+if [ -d /opt/sspa ];
 then
 	sudo rm /opt/sspa -r
 fi
