@@ -39,8 +39,12 @@ sudo sed -i '$ s/$/ isolcpus=3/' /boot/cmdline.txt
 echo dtparam=spi=on | sudo tee -a /boot/config.txt
 
 echo 
-echo Instalation finished
+echo 
+echo ---------------------------------------------------
+echo Instalation finished!
+echo vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
 echo Reboot for boot parameters to take effect
+echo ʌʌʌʌʌʌʌʌʌʌʌʌʌʌʌʌʌʌʌʌʌʌʌʌʌʌʌʌʌʌʌʌʌʌʌʌʌʌʌʌʌ
 echo 
 echo Run sspa_uninstall.sh to uninstall
 echo Run sspa --help for help on how to use the program
