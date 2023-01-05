@@ -7,7 +7,7 @@ then
 	sudo apt update && sudo apt-get install git
 fi
 
-sudo apt install pigpio pigpiod pip python3
+sudo apt install pigpio pigpiod pip python3 build-essential
 pip install pigpio
 
 if ! command -v rustup &> /dev/null
